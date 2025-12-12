@@ -1,0 +1,371 @@
+/*
+ Theme Name: mthfr-theme
+ Template: neve
+ */
+
+
+
+
+/* Override border only for the uploads table */
+#view-files td {
+    border-bottom: none !important;
+}
+
+/* ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */
+
+#custom-padding-bottom {
+    position: absolute;
+    bottom: 10px; /* adjust this value as needed */
+}
+
+table.dataTable td.dt-control:before {
+    content: '\f152';
+    font-family: FontAwesome;
+    cursor: pointer;
+    font-size: 22px;
+    color: #55a4be;
+}
+
+table.dataTable tr.shown td.details-control:before {
+    content: '\f150';
+    color: black;
+}
+
+#uploaded-files tbody tr.selected {
+    background-color: #d9edf7 !important; /* Light blue */
+    color: #000; /* Black text for better contrast */
+}
+
+
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.info-msg {
+  color: #059;
+  background-color: #BEF;
+}
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+.custom-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+
+.custom-add-to-cart-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.upload-column, .generate-report-column {
+ width: 48%;
+}
+
+
+.upload-column {  
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.generate-report-column {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+
+.uploaded-file {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.delete-upload {
+  color: red;
+  cursor: pointer;
+}
+
+
+/* Style for the disabled button */
+#generate-report:disabled {
+  background-color: #ccc;
+  /* Grey background */
+  color: #666;
+  /* Grey text */
+  cursor: not-allowed;
+  /* Disable the cursor */
+}
+
+.selected-row {
+  background-color: #84e8f6;
+  /* Light cyan background */
+  border: 2px solid #00796b;
+  /* Dark cyan border */
+}
+
+
+
+
+
+
+/* Save this as genetic-table.css in your theme's assets/css folder */
+.genetic-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.pathway-header {
+    background-color: #f0f0f0;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.pathway-header .toggle-icon {
+    float: right;
+    transition: transform 0.3s;
+}
+
+.pathway-header.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.pathway-content {
+    display: none;
+}
+
+.pathway-content.active {
+    display: table-row;
+}
+
+.data-row {
+    border: 1px solid #ddd;
+}
+
+.data-row td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.snp-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #0077cc;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.snp-icon img {
+    width: 12px;
+    height: 12px;
+    filter: invert(1);
+}
+
+.result-cell {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    width: 60px;
+}
+
+.info-section {
+    display: none;
+    background-color: #f9f9f9;
+}
+
+.info-section td {
+    padding: 15px;
+}
+
+.column-header {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+
+/*
+wp store
+*/
+#wpsl-stores {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#wpsl-stores ul {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+
+/* #wpsl-stores ul:before {
+    content: '';
+    display: table-row;
+    background: #f5f5f5;
+}
+
+#wpsl-stores ul:before > * {
+    content: '';
+    display: table-cell;
+    padding: 10px;
+    font-weight: bold;
+} */
+
+
+#wpsl-result-list ul {
+    width: 100%;
+}
+
+.wpsl-table-row {
+    width: 100%;
+    display: table-row;
+    border-bottom: 1px solid #ddd;
+}
+
+.wpsl-table-cell {
+    display: table-cell;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.store-info {
+    width: 30%;
+}
+
+.address-info {
+    width: 30%;
+}
+
+.contact-info {
+    width: 30%;
+}
+
+.direction-info {
+    width: 10%;
+}
+
+.wpsl-table-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.wpsl-table-row:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+.mthfr-order .order-confirmation {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.mthfr-order .header {
+    background: #4a6da7;
+    color: white;
+    padding: 20px;
+    font-size: 1.25rem;
+}
+
+.mthfr-order .content {
+    padding: 20px;
+}
+
+.mthfr-order .order-number {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #333;
+}
+
+.mthfr-order .message {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.mthfr-order .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.mthfr-order .product-table th {
+    text-align: left;
+    color: #666;
+    font-weight: normal;
+    padding: 8px 0;
+}
+
+.mthfr-order .product-table td {
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+}
+
+.mthfr-order .price-column {
+    text-align: right;
+}
+
+.mthfr-order .total-row td {
+    font-weight: bold;
+    border-top: 2px solid #eee;
+}
+
+.mthfr-order .customer-section {
+    margin-top: 30px;
+}
+
+.mthfr-order .customer-section h2 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.mthfr-order .link {
+    color: #4a6da7;
+    text-decoration: none;
+}
+
+.mthfr-order .link:hover {
+    text-decoration: underline;
+}

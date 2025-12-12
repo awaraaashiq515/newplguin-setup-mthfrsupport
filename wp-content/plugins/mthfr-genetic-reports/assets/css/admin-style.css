@@ -1,0 +1,460 @@
+/* MTHFR Admin Styles */
+
+.mthfr-dashboard {
+    max-width: 1200px;
+    margin: 20px 0;
+}
+
+/* Stats Grid */
+.mthfr-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.mthfr-stat-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mthfr-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mthfr-stat-card h3 {
+    margin: 0 0 10px 0;
+    color: #23282d;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #0073aa;
+    line-height: 1;
+}
+
+/* Section Styles */
+.mthfr-quick-actions,
+.mthfr-api-info,
+.mthfr-generate-form,
+.mthfr-recent-reports {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mthfr-quick-actions h2,
+.mthfr-api-info h2,
+.mthfr-generate-form h2,
+.mthfr-recent-reports h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #23282d;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 8px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-buttons .button {
+    transition: all 0.2s ease;
+}
+
+.action-buttons .button:hover {
+    transform: translateY(-1px);
+}
+
+/* API Endpoints */
+.api-endpoints .endpoint {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e5e5e5;
+    transition: background-color 0.2s ease;
+}
+
+.api-endpoints .endpoint:hover {
+    background: #f0f0f0;
+}
+
+.api-endpoints .endpoint strong {
+    min-width: 120px;
+    color: #23282d;
+}
+
+.api-endpoints code {
+    flex: 1;
+    background: #fff;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: Monaco, Consolas, 'Courier New', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.api-endpoints code:hover {
+    background: #f8f8f8;
+}
+
+.method-tag {
+    background: #0073aa;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Status Colors */
+.status-completed {
+    color: #008a00;
+    font-weight: bold;
+}
+
+.status-failed {
+    color: #d63638;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #dba617;
+    font-weight: bold;
+}
+
+/* Results Display */
+#mthfr-results {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#results-content {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    font-family: Monaco, Consolas, 'Courier New', monospace;
+    font-size: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e5e5e5;
+    line-height: 1.4;
+}
+
+#results-content pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Form Styles */
+.mthfr-generate-form .form-table th {
+    width: 150px;
+    padding: 15px 10px 15px 0;
+}
+
+.mthfr-generate-form .form-table td {
+    padding: 15px 10px;
+}
+
+.mthfr-generate-form input[type="number"],
+.mthfr-generate-form select {
+    width: 200px;
+}
+
+/* Debug Page Styles */
+.mthfr-debug-page {
+    max-width: 1000px;
+}
+
+.debug-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.debug-section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #23282d;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 8px;
+}
+
+.test-result {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    border-left: 4px solid;
+}
+
+.test-result.success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-left-color: #0f5132;
+}
+
+.test-result.warning {
+    background-color: #fff3cd;
+    color: #664d03;
+    border-left-color: #664d03;
+}
+
+.test-result.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left-color: #721c24;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px 15px;
+    border-radius: 4px;
+    border-left: 4px solid #721c24;
+    margin: 10px 0;
+}
+
+.available {
+    color: #008a00;
+    font-weight: bold;
+}
+
+.available::before {
+    content: "✓ ";
+    font-weight: bold;
+}
+
+.not-available {
+    color: #d63638;
+    font-weight: bold;
+}
+
+.not-available::before {
+    content: "✗ ";
+    font-weight: bold;
+}
+
+/* Gene References */
+.gene-references {
+    margin-top: 15px;
+}
+
+.gene-category {
+    margin-bottom: 25px;
+}
+
+.gene-category h3 {
+    margin-bottom: 12px;
+    color: #0073aa;
+    font-size: 16px;
+}
+
+.gene-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.gene-tag {
+    background: #f0f6fc;
+    color: #0969da;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #d0d7de;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.gene-tag:hover {
+    background: #dbeafe;
+    transform: translateY(-1px);
+}
+
+.debug-raw-data {
+    width: 100%;
+    height: 300px;
+    font-family: Monaco, Consolas, 'Courier New', monospace;
+    font-size: 11px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+/* Table Enhancements */
+.wp-list-table th {
+    background: #f1f1f1;
+    font-weight: 600;
+}
+
+.wp-list-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* Search Functionality */
+.tablenav {
+    margin: 10px 0;
+}
+
+#report-search {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mthfr-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons .button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .api-endpoints .endpoint {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .api-endpoints .endpoint strong {
+        min-width: auto;
+    }
+
+    .api-endpoints code {
+        width: 100%;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 480px) {
+    .mthfr-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gene-list {
+        flex-direction: column;
+    }
+
+    .gene-tag {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Loading States */
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Tooltip Styles */
+.mthfr-tooltip {
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Notice Styles */
+.notice {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 4px solid;
+    background: #fff;
+}
+
+.notice-success {
+    border-left-color: #00a32a;
+    background: #f0f9ff;
+}
+
+.notice-error {
+    border-left-color: #d63638;
+    background: #fef7f7;
+}
+
+/* Animation for new reports */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.new-report {
+    animation: fadeInUp 0.5s ease;
+}
+
+/* Print Styles */
+@media print {
+
+    .mthfr-quick-actions,
+    .action-buttons,
+    .button {
+        display: none;
+    }
+
+    .debug-section {
+        break-inside: avoid;
+        margin-bottom: 20px;
+    }
+
+    .debug-raw-data {
+        height: auto;
+        max-height: none;
+    }
+}

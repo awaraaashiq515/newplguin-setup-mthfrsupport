@@ -1,0 +1,19 @@
+{
+    "name": "mthfr/mthfr-genetic-reports",
+    "description": "WordPress plugin for generating genetic reports from database",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "MTHFR\\": "src/"
+        },
+        "files": [
+            "includes/class-genetic-data.php",
+            "includes/class-report-utils.php",
+            "includes/class-woocommerce-integration.php",
+            "includes/class-admin-handler.php",
+            "includes/class-zip-processor.php",
+            "includes/class-async-report-generator.php",
+            "api/class-api-endpoints.php"
+        ]
+    }
+}

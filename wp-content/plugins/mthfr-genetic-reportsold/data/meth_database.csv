@@ -1,0 +1,11 @@
+gene,pathway,function,cofactors,related_genes,supplements
+MTHFR,"Folate Cycle","Converts 5,10-MTHF to 5-MTHF","B2,B9","MTR,MTRR,DHFR","5-MTHF,Methylcobalamin,Riboflavin"
+COMT,"Catecholamine Metabolism","Degrades catecholamines","Mg,SAMe","MAO-A,MAO-B","Magnesium,SAMe,Green Tea Extract"
+CBS,Transsulfuration,"Converts homocysteine to cystathionine",B6,"CTH,SUOX","P5P,Molybdenum,Taurine"
+MTR,"Methionine Cycle","Converts homocysteine to methionine","B12,5-MTHF","MTRR,MTHFR","Methylcobalamin,5-MTHF"
+MTRR,"Methionine Cycle","Regenerates MTR enzyme","B12,SAMe",MTR,"Methylcobalamin,SAMe"
+AHCY,"Methionine Cycle","Converts SAH to homocysteine",None,SAMe,"NAC,Trimethylglycine"
+BHMT,"Alternative Methylation","Alternative homocysteine conversion","Betaine,Zinc","MTHFR,MTR","Betaine,Zinc"
+MAT1A,"SAMe Production","Produces SAMe from methionine","ATP,Mg",AHCY,"SAMe,Magnesium"
+PEMT,Phosphatidylcholine,"Creates phosphatidylcholine",SAMe,MTHFR,"Phosphatidylcholine,SAMe"
+HNMT,"Histamine Metabolism","Methylates histamine",SAMe,COMT,"SAMe,DAO enzyme"

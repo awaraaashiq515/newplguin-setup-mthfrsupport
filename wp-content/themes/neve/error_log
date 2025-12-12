@@ -1,0 +1,8 @@
+[07-May-2025 22:08:22 Australia/Melbourne] PHP Fatal error:  Uncaught Error: Call to undefined function apply_filters() in /home/mthfrsupport/domains/mthfrsupport.org/public_html/wp-content/themes/neve/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/mthfrsupport/domains/mthfrsupport.org/public_html/wp-content/themes/neve/index.php on line 15
+[07-May-2025 22:08:32 Australia/Melbourne] PHP Fatal error:  Uncaught Error: Call to undefined function apply_filters() in /home/mthfrsupport/domains/mthfrsupport.org/public_html/wp-content/themes/neve/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/mthfrsupport/domains/mthfrsupport.org/public_html/wp-content/themes/neve/index.php on line 15
