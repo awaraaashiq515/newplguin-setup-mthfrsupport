@@ -11312,3 +11312,1297 @@ Stack trace:
 [12-Dec-2025 12:32:01 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
 [12-Dec-2025 12:32:01 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
 [12-Dec-2025 12:32:02 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:32:37 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:32:37 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:32:37 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:32:37 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:32:37 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:32:37 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:32:37 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:32:39 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:32:42 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:32:42 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:32:42 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:32:42 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:32:42 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:32:42 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:32:42 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:32:45 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:35:09 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:35:09 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:35:09 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:35:09 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:35:09 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:35:09 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:35:09 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:35:10 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:35:13 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:35:13 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:35:13 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:35:13 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:35:13 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:35:13 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:35:13 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:35:14 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:35:17 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:35:17 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:35:17 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:35:17 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:35:17 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:35:17 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:35:17 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:35:18 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:35:20 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:35:20 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:35:20 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:35:20 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:35:20 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:35:20 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:35:20 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:35:21 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:37:51 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:37:51 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:37:52 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:37:52 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:37:52 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:37:52 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:37:52 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:37:52 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:37:52 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:37:54 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:38:02 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:38:02 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:38:02 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:38:02 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:38:02 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:38:02 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:38:02 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:38:04 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:44:40 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /Users/bot/Local Sites/mthfrsupport/app/public/wp-includes/class-wpdb.php on line 1994
+[12-Dec-2025 12:44:41 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /Users/bot/Local Sites/mthfrsupport/app/public/wp-includes/class-wpdb.php on line 1994
+[12-Dec-2025 12:44:41 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /Users/bot/Local Sites/mthfrsupport/app/public/wp-includes/class-wpdb.php on line 1994
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:45:00 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:45:00 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:45:00 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:45:00 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:45:00 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:45:00 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:45:00 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:45:03 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:13 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:13 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:13 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:13 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:13 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:13 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:13 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:15 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:17 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:17 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:17 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:17 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:18 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:18 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:18 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:18 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:18 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:18 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:18 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:19 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:23 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:23 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:23 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:23 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:23 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:23 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:23 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:24 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:25 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:30 UTC] PHP Deprecated:  Fetching multiple feeds with single SimplePie instance is deprecated since SimplePie 1.9.0, create one SimplePie instance per feed and use SimplePie::merge_items to get a single list of items. in /Users/bot/Local Sites/mthfrsupport/app/public/wp-includes/SimplePie/src/SimplePie.php on line 769
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:41 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:41 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:41 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:41 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:41 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:41 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:41 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:41 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:41 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:43 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:43 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:51 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:51 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:51 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:51 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:51 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:51 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:51 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:53 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:53 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:53 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:53 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:53 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:53 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:53 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:53 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:47:55 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:47:58 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:47:58 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:47:58 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:47:58 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:47:58 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:47:58 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:47:58 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:00 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:01 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:01 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:01 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:01 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:01 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:01 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:01 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:03 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:03 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:03 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:03 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:03 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:03 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:03 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:03 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:05 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:07 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:07 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:07 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:07 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:07 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:07 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:07 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:08 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:09 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:09 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:09 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:09 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:09 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:09 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:09 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:10 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:16 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:16 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:16 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:16 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:16 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:16 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:16 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:17 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:17 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:17 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:17 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:17 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:17 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:17 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:18 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:19 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:26 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:26 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:26 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:26 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:26 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:26 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:26 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:27 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:27 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:27 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:27 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:27 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:27 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:27 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:28 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:29 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:33 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:33 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:33 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:33 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:33 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:33 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:33 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:35 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:35 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:41 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:41 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:41 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:41 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:41 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:41 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:41 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:42 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:42 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:42 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:42 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:42 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:42 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:42 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:43 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:45 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:51 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:51 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:51 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:51 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:48:52 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:48:52 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:48:52 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:48:52 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:48:55 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:48:55 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:49:04 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:49:04 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:49:04 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:49:04 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:49:04 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:49:04 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:49:04 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:49:07 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:50:05 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:50:05 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:50:05 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:50:05 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:50:05 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:50:05 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:50:05 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:50:07 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:50:11 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:50:11 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:50:11 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:50:11 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:50:11 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:50:11 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:50:11 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:50:12 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:51:21 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:51:21 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:51:21 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:51:21 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:51:21 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:51:21 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:51:21 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:51:23 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:51:27 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:51:27 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:51:27 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:51:27 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:51:27 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:51:27 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:51:27 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:51:29 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:52:23 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:52:23 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:52:23 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:52:23 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:52:23 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:52:23 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:52:23 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:52:24 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:52:29 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:52:29 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:52:29 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:52:29 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:52:29 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:52:29 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:52:29 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:52:31 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:53:29 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:53:29 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:53:29 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:53:29 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:53:29 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:53:29 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:53:29 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:53:31 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:53:35 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:53:35 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:53:35 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:53:35 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:53:35 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:53:35 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:53:35 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:53:36 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:55:01 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:55:01 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:55:01 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:55:01 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:55:01 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:55:01 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:55:01 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:55:03 UTC] MTHFR: Admin class initialized
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/Database/Database.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded includes/class-genetic-data.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/Database/ExcelDatabase.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded includes/class-report-utils.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/Report/ReportGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfContentGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfBookmarkGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfUtils.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfHtmlHeadGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfHeaderGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfStatsSummaryGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfCategoriesContentGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfFiguresContentGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded src/Core/PDF/PdfDisclaimerGenerator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: WooCommerce not active, integration not loaded
+[12-Dec-2025 12:55:07 UTC] MTHFR: Fixed WooCommerce integration loaded - all meta boxes should work
+[12-Dec-2025 12:55:07 UTC] MTHFR: Single meta box hook registered: mthfr_add_all_order_meta_boxes
+[12-Dec-2025 12:55:07 UTC] MTHFR: AJAX handlers registered: mthfr_test_report, mthfr_generate_pdf, mthfr_email_report
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded includes/class-woocommerce-integration.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded includes/class-admin-handler.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded includes/class-zip-processor.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Async Report Generator initialized
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded includes/class-async-report-generator.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Loaded api/class-api-endpoints.php
+[12-Dec-2025 12:55:07 UTC] MTHFR: Created class alias MTHFR_PDF_Generator -> MTHFR\PDF\PdfGenerator
+[12-Dec-2025 12:55:07 UTC] MTHFR: Created class alias MTHFR_Report_Generator -> MTHFR\Core\Report\ReportGenerator
+[12-Dec-2025 12:55:07 UTC] MTHFR: Created class alias MTHFR_Database -> MTHFR\Core\Database\Database
+[12-Dec-2025 12:55:07 UTC] MTHFR: Created class alias Genetic_Database -> MTHFR\Core\Database\ExcelDatabase
+[12-Dec-2025 12:55:09 UTC] MTHFR: Admin class initialized
