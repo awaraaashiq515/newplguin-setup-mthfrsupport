@@ -163,7 +163,7 @@ class MTHFR_Cache_Performance_Test {
             // This will trigger cache lookups for variants in this category
             global $wpdb;
             $variant_ids = $wpdb->get_col($wpdb->prepare(
-                "SELECT variant_id FROM {$wpdb->prefix}variant_categories WHERE category_name = %s LIMIT 10",
+                "SELECT id FROM {$wpdb->prefix}genetic_variants WHERE categories = %s LIMIT 10",
                 $test_category
             ));
 
@@ -183,7 +183,7 @@ class MTHFR_Cache_Performance_Test {
         $cached_result = $this->measure_time(function() use ($test_category) {
             global $wpdb;
             $variant_ids = $wpdb->get_col($wpdb->prepare(
-                "SELECT variant_id FROM {$wpdb->prefix}variant_categories WHERE category_name = %s LIMIT 10",
+                "SELECT id FROM {$wpdb->prefix}genetic_variants WHERE categories = %s LIMIT 10",
                 $test_category
             ));
 

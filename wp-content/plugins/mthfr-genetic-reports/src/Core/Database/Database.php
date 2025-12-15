@@ -82,59 +82,48 @@ class Database {
         ) $charset_collate;";
 
         // Genetic variants table
-        $variants_table = $wpdb->prefix . 'genetic_variants';
-        $variants_sql = "CREATE TABLE $variants_table (
+$variants_table = $wpdb->prefix . 'genetic_variants';
+
+$variants_sql = "CREATE TABLE $variants_table (
+    id int(11) NOT NULL AUTO_INCREMENT,
+
+    report_name varchar(255) DEFAULT NULL,
+    categories varchar(255) DEFAULT NULL,
+
+    rsid varchar(50) DEFAULT NULL,
+    gene varchar(50) DEFAULT NULL,
+    snp_name varchar(50) DEFAULT NULL,
+    alleles varchar(50) DEFAULT NULL,
+    risk_allele varchar(10) DEFAULT NULL,
+
+    info text,
+    notes text,
+    video varchar(255) DEFAULT NULL,
+    tags longtext,
+
+    created_at datetime DEFAULT CURRENT_TIMESTAMP,
+    updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (id),
+    KEY rsid (rsid),
+    KEY gene (gene)
+) $charset_collate;";
+
+
+       // Categories are now stored directly in genetic_variants table
+       // No separate variant_categories table needed
+
+
+       // Import data table for general XLSX imports
+        $import_data_table = $wpdb->prefix . 'import_data';
+        $import_data_sql = "CREATE TABLE $import_data_table (
             id int(11) NOT NULL AUTO_INCREMENT,
-            rsid varchar(20) NOT NULL,
-            gene varchar(50) NOT NULL,
-            snp_name varchar(50) DEFAULT NULL,
-            risk_allele varchar(10) DEFAULT NULL,
-            info text,
-            video varchar(500) DEFAULT NULL,
-            report_name varchar(255) DEFAULT NULL,
-            tags text,
+            row_data longtext NOT NULL,
+            import_batch varchar(100) DEFAULT NULL,
             created_at datetime DEFAULT CURRENT_TIMESTAMP,
             updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY (id),
-            KEY rsid (rsid),
-            KEY gene (gene)
-        ) $charset_collate;";
-
-        // Variant categories table (many-to-many relationship)
-        $categories_table = $wpdb->prefix . 'variant_categories';
-        $categories_sql = "CREATE TABLE $categories_table (
-            id int(11) NOT NULL AUTO_INCREMENT,
-            variant_id int(11) NOT NULL,
-            category_name varchar(255) NOT NULL,
-            created_at datetime DEFAULT CURRENT_TIMESTAMP,
-            PRIMARY KEY (id),
-            KEY variant_id (variant_id),
-            KEY category_name (category_name),
-            FOREIGN KEY (variant_id) REFERENCES $variants_table(id) ON DELETE CASCADE
-        ) $charset_collate;";
-
-        // Variant tags table (many-to-many relationship)
-        $tags_table = $wpdb->prefix . 'variant_tags';
-        $tags_sql = "CREATE TABLE $tags_table (
-            id int(11) NOT NULL AUTO_INCREMENT,
-            variant_id int(11) NOT NULL,
-            tag_name varchar(100) NOT NULL,
-            created_at datetime DEFAULT CURRENT_TIMESTAMP,
-            PRIMARY KEY (id),
-            KEY variant_id (variant_id),
-            KEY tag_name (tag_name),
-            FOREIGN KEY (variant_id) REFERENCES $variants_table(id) ON DELETE CASCADE
-        ) $charset_collate;";
-
-        // Pathways table
-        $pathways_table = $wpdb->prefix . 'pathways';
-        $pathways_sql = "CREATE TABLE $pathways_table (
-            id int(11) NOT NULL AUTO_INCREMENT,
-            pathway_name varchar(255) NOT NULL,
-            description text,
-            created_at datetime DEFAULT CURRENT_TIMESTAMP,
-            PRIMARY KEY (id),
-            UNIQUE KEY pathway_name (pathway_name)
+            KEY import_batch (import_batch)
         ) $charset_collate;";
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -142,9 +131,7 @@ class Database {
         dbDelta($reports_sql);
         dbDelta($variants_sql);
         $wpdb->query("ALTER TABLE wp_genetic_variants DROP INDEX IF EXISTS rsid_gene;");
-        dbDelta($categories_sql);
-        dbDelta($tags_sql);
-        dbDelta($pathways_sql);
+        dbDelta($import_data_sql);
 
         // Ensure indexes exist on frequently queried columns
         self::ensure_indexes();
@@ -200,6 +187,24 @@ class Database {
                 self::populate_existing_urls();
             } else {
                 error_log('MTHFR: Failed to add pdf_url column: ' . $wpdb->last_error);
+            }
+        }
+
+        // Check if categories column exists in genetic_variants table, add if not
+        $variants_table = $wpdb->prefix . 'genetic_variants';
+        $categories_exists = $wpdb->get_results(
+            "SHOW COLUMNS FROM {$variants_table} LIKE 'categories'"
+        );
+
+        if (empty($categories_exists)) {
+            $result = $wpdb->query(
+                "ALTER TABLE {$variants_table} ADD COLUMN categories text AFTER tags"
+            );
+
+            if ($result !== false) {
+                error_log('MTHFR: Successfully added categories column to genetic_variants table');
+            } else {
+                error_log('MTHFR: Failed to add categories column: ' . $wpdb->last_error);
             }
         }
     }
@@ -259,6 +264,11 @@ class Database {
         $indexes = array(
             array(
                 'table' => $wpdb->prefix . 'genetic_variants',
+                'column' => 'categories',
+                'index_name' => 'categories'
+            ),
+            array(
+                'table' => $wpdb->prefix . 'genetic_variants',
                 'column' => 'rsid',
                 'index_name' => 'rsid'
             ),
@@ -271,16 +281,6 @@ class Database {
                 'table' => $wpdb->prefix . 'genetic_variants',
                 'column' => 'rsid,gene',
                 'index_name' => 'rsid_gene'
-            ),
-            array(
-                'table' => $wpdb->prefix . 'variant_categories',
-                'column' => 'category_name',
-                'index_name' => 'category_name'
-            ),
-            array(
-                'table' => $wpdb->prefix . 'variant_tags',
-                'column' => 'tag_name',
-                'index_name' => 'tag_name'
             )
         );
 
@@ -661,16 +661,18 @@ class Database {
                 $variants[$rsid] = array();
             }
 
-            // Get categories and tags for this variant
-            $categories = self::get_variant_categories($row['id']);
+            // Get tags for this variant
             $tags = self::get_variant_tags($row['id']);
+
+            // Use categories from the variants table
+            $category = !empty($row['categories']) ? $row['categories'] : 'Primary SNPs';
 
             $variant_data = array(
                 'RSID' => $row['rsid'],
                 'Gene' => $row['gene'],
                 'SNP' => $row['snp_name'],
                 'Risk' => $row['risk_allele'],
-                'Category' => !empty($categories) ? $categories[0] : 'Primary SNPs', // Use first category as pathway
+                'Category' => $category,
                 'Report Name' => $row['report_name'],
                 'Info' => $row['info'],
                 'Video' => $row['video'],
@@ -703,16 +705,18 @@ class Database {
                 $variants[$rsid] = array();
             }
 
-            // Get categories and tags for this variant
-            $categories = self::get_variant_categories($row['id']);
+            // Get tags for this variant
             $tags = self::get_variant_tags($row['id']);
+
+            // Use categories from the variants table
+            $category = !empty($row['categories']) ? $row['categories'] : 'Primary SNPs';
 
             $variant_data = array(
                 'RSID' => $row['rsid'],
                 'Gene' => $row['gene'],
                 'SNP' => $row['snp_name'],
                 'Risk' => $row['risk_allele'],
-                'Category' => !empty($categories) ? $categories[0] : 'Primary SNPs', // Use first category as pathway
+                'Category' => $category,
                 'Report Name' => $row['report_name'],
                 'Info' => $row['info'],
                 'Video' => $row['video'],
@@ -761,15 +765,17 @@ class Database {
 
          $variants = array();
          foreach ($results as $row) {
-             $categories = self::get_variant_categories($row['id']);
              $tags = self::get_variant_tags($row['id']);
+
+             // Use categories from the variants table
+             $category = !empty($row['categories']) ? $row['categories'] : 'Primary SNPs';
 
              $variants[] = array(
                  'RSID' => $row['rsid'],
                  'Gene' => $row['gene'],
                  'SNP' => $row['snp_name'],
                  'Risk' => $row['risk_allele'],
-                 'Category' => !empty($categories) ? $categories[0] : 'Primary SNPs',
+                 'Category' => $category,
                  'Report Name' => $row['report_name'],
                  'Info' => $row['info'],
                  'Video' => $row['video'],
@@ -797,12 +803,9 @@ class Database {
          $table = $wpdb->prefix . 'genetic_variants';
 
          $results = $wpdb->get_results($wpdb->prepare(
-             "SELECT v.*, GROUP_CONCAT(DISTINCT c.category_name) as categories, GROUP_CONCAT(DISTINCT t.tag_name) as tags
+             "SELECT v.*
               FROM $table v
-              LEFT JOIN {$wpdb->prefix}variant_categories c ON v.id = c.variant_id
-              LEFT JOIN {$wpdb->prefix}variant_tags t ON v.id = t.variant_id
               WHERE v.rsid = %s
-              GROUP BY v.id
               ORDER BY v.gene",
              $rsid
          ), ARRAY_A);
@@ -814,15 +817,26 @@ class Database {
 
          $variants = array();
          foreach ($results as $row) {
-             $categories = !empty($row['categories']) ? explode(',', $row['categories']) : array();
-             $tags = !empty($row['tags']) ? explode(',', $row['tags']) : array();
+             $tags = array();
+             if (!empty($row['tags'])) {
+                 $tag_parts = explode(',', $row['tags']);
+                 foreach ($tag_parts as $tag) {
+                     $tag = trim($tag);
+                     if (!empty($tag)) {
+                         $tags[] = $tag;
+                     }
+                 }
+             }
+
+             // Use categories from the variants table
+             $category = !empty($row['categories']) ? $row['categories'] : 'Primary SNPs';
 
              $variants[] = array(
                  'RSID' => $row['rsid'],
                  'Gene' => $row['gene'],
                  'SNP' => $row['snp_name'],
                  'Risk' => $row['risk_allele'],
-                 'Category' => !empty($categories) ? $categories[0] : 'Primary SNPs',
+                 'Category' => $category,
                  'Report Name' => $row['report_name'],
                  'Info' => $row['info'],
                  'Video' => $row['video'],
@@ -864,12 +878,9 @@ class Database {
              $placeholders = array_fill(0, count($chunk), '%s');
              $in_clause = implode(', ', $placeholders);
 
-             $query = "SELECT v.*, GROUP_CONCAT(DISTINCT c.category_name) as categories, GROUP_CONCAT(DISTINCT t.tag_name) as tags
+             $query = "SELECT v.*
                       FROM $table v
-                      LEFT JOIN {$wpdb->prefix}variant_categories c ON v.id = c.variant_id
-                      LEFT JOIN {$wpdb->prefix}variant_tags t ON v.id = t.variant_id
                       WHERE v.rsid IN ($in_clause)
-                      GROUP BY v.id
                       ORDER BY v.rsid, v.gene";
 
              $results = $wpdb->get_results($wpdb->prepare($query, $chunk), ARRAY_A);
@@ -890,15 +901,26 @@ class Database {
                  $variants[$rsid] = array();
              }
 
-             $categories = !empty($row['categories']) ? explode(',', $row['categories']) : array();
-             $tags = !empty($row['tags']) ? explode(',', $row['tags']) : array();
+             $tags = array();
+             if (!empty($row['tags'])) {
+                 $tag_parts = explode(',', $row['tags']);
+                 foreach ($tag_parts as $tag) {
+                     $tag = trim($tag);
+                     if (!empty($tag)) {
+                         $tags[] = $tag;
+                     }
+                 }
+             }
+
+             // Use categories from the variants table
+             $category = !empty($row['categories']) ? $row['categories'] : 'Primary SNPs';
 
              $variant_data = array(
                  'RSID' => $row['rsid'],
                  'Gene' => $row['gene'],
                  'SNP' => $row['snp_name'],
                  'Risk' => $row['risk_allele'],
-                 'Category' => !empty($categories) ? $categories[0] : 'Primary SNPs',
+                 'Category' => $category,
                  'Report Name' => $row['report_name'],
                  'Info' => $row['info'],
                  'Video' => $row['video'],
@@ -914,7 +936,7 @@ class Database {
      }
 
     /**
-      * Get variant categories
+      * Get variant categories (stored directly in genetic_variants table)
       */
      public static function get_variant_categories($variant_id) {
          $cache_key = 'mthfr_categories_' . $variant_id;
@@ -925,12 +947,14 @@ class Database {
          }
 
          global $wpdb;
-         $table = $wpdb->prefix . 'variant_categories';
+         $table = $wpdb->prefix . 'genetic_variants';
 
-         $results = $wpdb->get_col($wpdb->prepare(
-             "SELECT category_name FROM $table WHERE variant_id = %d",
+         $category = $wpdb->get_var($wpdb->prepare(
+             "SELECT categories FROM $table WHERE id = %d",
              $variant_id
          ));
+
+         $results = !empty($category) ? array($category) : array();
 
          wp_cache_set($cache_key, $results, 'mthfr', 3600); // Cache for 1 hour
          return $results;
@@ -948,12 +972,23 @@ class Database {
          }
 
          global $wpdb;
-         $table = $wpdb->prefix . 'variant_tags';
+         $table = $wpdb->prefix . 'genetic_variants';
 
-         $results = $wpdb->get_col($wpdb->prepare(
-             "SELECT tag_name FROM $table WHERE variant_id = %d",
+         $tags_string = $wpdb->get_var($wpdb->prepare(
+             "SELECT tags FROM $table WHERE id = %d",
              $variant_id
          ));
+
+         $results = array();
+         if (!empty($tags_string)) {
+             $tags = explode(',', $tags_string);
+             foreach ($tags as $tag) {
+                 $tag = trim($tag);
+                 if (!empty($tag)) {
+                     $results[] = $tag;
+                 }
+             }
+         }
 
          wp_cache_set($cache_key, $results, 'mthfr', 3600); // Cache for 1 hour
          return $results;
@@ -969,11 +1004,11 @@ class Database {
          if ($cached_result !== false) {
              return $cached_result;
          }
+global $wpdb;
 
-         global $wpdb;
-         $table = $wpdb->prefix . 'variant_categories';
+$table = $wpdb->prefix . 'genetic_variants';
 
-         $results = $wpdb->get_col("SELECT DISTINCT category_name FROM $table ORDER BY category_name");
+$results = $wpdb->get_col("SELECT DISTINCT categories FROM $table WHERE categories IS NOT NULL AND categories != '' ORDER BY categories");
 
          wp_cache_set($cache_key, $results, 'mthfr', 86400); // Cache for 24 hours
          return $results;
@@ -984,10 +1019,10 @@ class Database {
      */
     public static function get_categories_paginated($limit = 50, $offset = 0) {
         global $wpdb;
-        $table = $wpdb->prefix . 'variant_categories';
+        $table = $wpdb->prefix . 'genetic_variants';
 
         $results = $wpdb->get_col($wpdb->prepare(
-            "SELECT DISTINCT category_name FROM $table ORDER BY category_name LIMIT %d OFFSET %d",
+            "SELECT DISTINCT categories FROM $table WHERE categories IS NOT NULL AND categories != '' ORDER BY categories LIMIT %d OFFSET %d",
             $limit, $offset
         ));
 
@@ -999,8 +1034,8 @@ class Database {
      */
     public static function get_categories_count() {
         global $wpdb;
-        $table = $wpdb->prefix . 'variant_categories';
-        return $wpdb->get_var("SELECT COUNT(DISTINCT category_name) FROM $table") ?: 0;
+        $table = $wpdb->prefix . 'genetic_variants';
+        return $wpdb->get_var("SELECT COUNT(DISTINCT categories) FROM $table WHERE categories IS NOT NULL AND categories != ''") ?: 0;
     }
 
     /**
@@ -1015,36 +1050,41 @@ class Database {
          }
 
          global $wpdb;
-         $table = $wpdb->prefix . 'variant_tags';
+         $table = $wpdb->prefix . 'genetic_variants';
 
-         $results = $wpdb->get_col("SELECT DISTINCT tag_name FROM $table ORDER BY tag_name");
+         $tags_strings = $wpdb->get_col("SELECT tags FROM $table WHERE tags IS NOT NULL AND tags != ''");
 
-         wp_cache_set($cache_key, $results, 'mthfr', 86400); // Cache for 24 hours
-         return $results;
+         $all_tags = array();
+         foreach ($tags_strings as $tags_str) {
+             $tags = explode(',', $tags_str);
+             foreach ($tags as $tag) {
+                 $tag = trim($tag);
+                 if (!empty($tag) && !in_array($tag, $all_tags)) {
+                     $all_tags[] = $tag;
+                 }
+             }
+         }
+
+         sort($all_tags);
+
+         wp_cache_set($cache_key, $all_tags, 'mthfr', 86400); // Cache for 24 hours
+         return $all_tags;
      }
 
     /**
      * Get tags with pagination
      */
     public static function get_tags_paginated($limit = 50, $offset = 0) {
-        global $wpdb;
-        $table = $wpdb->prefix . 'variant_tags';
-
-        $results = $wpdb->get_col($wpdb->prepare(
-            "SELECT DISTINCT tag_name FROM $table ORDER BY tag_name LIMIT %d OFFSET %d",
-            $limit, $offset
-        ));
-
-        return $results;
+        $all_tags = self::get_all_tags();
+        return array_slice($all_tags, $offset, $limit);
     }
 
     /**
      * Get total count of distinct tags
      */
     public static function get_tags_count() {
-        global $wpdb;
-        $table = $wpdb->prefix . 'variant_tags';
-        return $wpdb->get_var("SELECT COUNT(DISTINCT tag_name) FROM $table") ?: 0;
+        $all_tags = self::get_all_tags();
+        return count($all_tags);
     }
 
     /**
@@ -1076,9 +1116,10 @@ class Database {
                 'info' => $data['info'] ?? null,
                 'video' => $data['video'] ?? null,
                 'report_name' => $data['report_name'] ?? null,
-                'tags' => $data['tags'] ?? null
+                'tags' => $data['tags'] ?? null,
+                'categories' => $data['categories'] ?? null
             ),
-            array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+            array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
         );
 
         if ($result === false) {
@@ -1096,49 +1137,40 @@ class Database {
         return $variant_id;
     }
 
-    /**
-     * Insert variant category
-     */
-    public static function insert_variant_category($variant_id, $category_name) {
-        global $wpdb;
-        $table = $wpdb->prefix . 'variant_categories';
-
-
-        $result = $wpdb->insert(
-            $table,
-            array(
-                'variant_id' => $variant_id,
-                'category_name' => $category_name
-            ),
-            array('%d', '%s')
-        );
-
-        if ($result !== false) {
-            // Clear related caches
-            self::clear_mthfr_caches(array(
-                'mthfr_categories_' . $variant_id,
-                'mthfr_all_categories'
-            ));
-            return $wpdb->insert_id;
-        }
-
-        return false;
-    }
 
     /**
-     * Insert variant tag
+     * Insert variant tag (appends to tags column in genetic_variants)
      */
     public static function insert_variant_tag($variant_id, $tag_name) {
         global $wpdb;
-        $table = $wpdb->prefix . 'variant_tags';
+        $table = $wpdb->prefix . 'genetic_variants';
 
-        $result = $wpdb->insert(
+        // Get current tags
+        $current_tags = $wpdb->get_var($wpdb->prepare(
+            "SELECT tags FROM $table WHERE id = %d",
+            $variant_id
+        ));
+
+        $tags_array = array();
+        if (!empty($current_tags)) {
+            $tags_array = explode(',', $current_tags);
+            $tags_array = array_map('trim', $tags_array);
+        }
+
+        // Add new tag if not already present
+        $tag_name = trim($tag_name);
+        if (!in_array($tag_name, $tags_array)) {
+            $tags_array[] = $tag_name;
+        }
+
+        $new_tags = implode(',', $tags_array);
+
+        $result = $wpdb->update(
             $table,
-            array(
-                'variant_id' => $variant_id,
-                'tag_name' => $tag_name
-            ),
-            array('%d', '%s')
+            array('tags' => $new_tags),
+            array('id' => $variant_id),
+            array('%s'),
+            array('%d')
         );
 
         if ($result !== false) {
@@ -1147,7 +1179,7 @@ class Database {
                 'mthfr_tags_' . $variant_id,
                 'mthfr_all_tags'
             ));
-            return $wpdb->insert_id;
+            return true;
         }
 
         return false;
@@ -1208,13 +1240,14 @@ class Database {
                 $variant['info'] ?? null,
                 $variant['video'] ?? null,
                 $variant['report_name'] ?? null,
-                $variant['tags'] ?? null
+                $variant['tags'] ?? null,
+                $variant['categories'] ?? null
             ));
-            $placeholders[] = "(%s, %s, %s, %s, %s, %s, %s, %s)";
+            $placeholders[] = "(%s, %s, %s, %s, %s, %s, %s, %s, %s)";
         }
 
         $query = "INSERT INTO $table
-                  (rsid, gene, snp_name, risk_allele, info, video, report_name, tags)
+                  (rsid, gene, snp_name, risk_allele, info, video, report_name, tags, categories)
                   VALUES " . implode(', ', $placeholders);
 
         $result = $wpdb->query($wpdb->prepare($query, $values));
@@ -1252,94 +1285,23 @@ class Database {
         return $inserted_ids;
     }
 
-    /**
-     * Batch insert variant categories
-     */
-    public static function batch_insert_variant_categories($categories_data) {
-        global $wpdb;
-        $table = $wpdb->prefix . 'variant_categories';
-
-        if (empty($categories_data)) {
-            return 0;
-        }
-
-        $values = array();
-        $placeholders = array();
-
-        foreach ($categories_data as $category) {
-            $values = array_merge($values, array(
-                $category['variant_id'],
-                $category['category_name']
-            ));
-            $placeholders[] = "(%d, %s)";
-        }
-
-        $query = "INSERT INTO $table
-                  (variant_id, category_name)
-                  VALUES " . implode(', ', $placeholders);
-
-        $result = $wpdb->query($wpdb->prepare($query, $values));
-
-        if ($result === false) {
-            error_log("MTHFR: Batch insert categories failed: " . $wpdb->last_error);
-            return 0;
-        }
-
-        // Clear related caches
-        if ($result > 0) {
-            $cache_keys_to_clear = array('mthfr_all_categories');
-            foreach ($categories_data as $category) {
-                $cache_keys_to_clear[] = 'mthfr_categories_' . $category['variant_id'];
-            }
-            self::clear_mthfr_caches($cache_keys_to_clear);
-        }
-
-        return $result;
-    }
 
     /**
-     * Batch insert variant tags
+     * Batch insert variant tags (appends to tags column in genetic_variants)
      */
     public static function batch_insert_variant_tags($tags_data) {
-        global $wpdb;
-        $table = $wpdb->prefix . 'variant_tags';
-
         if (empty($tags_data)) {
             return 0;
         }
 
-        $values = array();
-        $placeholders = array();
-
+        $updated_count = 0;
         foreach ($tags_data as $tag) {
-            $values = array_merge($values, array(
-                $tag['variant_id'],
-                $tag['tag_name']
-            ));
-            $placeholders[] = "(%d, %s)";
-        }
-
-        $query = "INSERT INTO $table
-                  (variant_id, tag_name)
-                  VALUES " . implode(', ', $placeholders);
-
-        $result = $wpdb->query($wpdb->prepare($query, $values));
-
-        if ($result === false) {
-            error_log("MTHFR: Batch insert tags failed: " . $wpdb->last_error);
-            return 0;
-        }
-
-        // Clear related caches
-        if ($result > 0) {
-            $cache_keys_to_clear = array('mthfr_all_tags');
-            foreach ($tags_data as $tag) {
-                $cache_keys_to_clear[] = 'mthfr_tags_' . $tag['variant_id'];
+            if (self::insert_variant_tag($tag['variant_id'], $tag['tag_name'])) {
+                $updated_count++;
             }
-            self::clear_mthfr_caches($cache_keys_to_clear);
         }
 
-        return $result;
+        return $updated_count;
     }
 
     /**
@@ -1354,21 +1316,100 @@ class Database {
         $stats['variants'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}genetic_variants");
 
         // Count categories
-        $stats['categories'] = $wpdb->get_var("SELECT COUNT(DISTINCT category_name) FROM {$wpdb->prefix}variant_categories");
+        $stats['categories'] = $wpdb->get_var("SELECT COUNT(DISTINCT categories) FROM {$wpdb->prefix}genetic_variants WHERE categories IS NOT NULL AND categories != ''");
 
         // Count tags
-        $stats['tags'] = $wpdb->get_var("SELECT COUNT(DISTINCT tag_name) FROM {$wpdb->prefix}variant_tags");
+        $stats['tags'] = self::get_tags_count();
 
         // Count pathways
         $stats['pathways'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}pathways");
 
-        // Count category relationships
-        $stats['category_relationships'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}variant_categories");
+        // Count category relationships (now stored directly in variants table)
+        $stats['category_relationships'] = $stats['categories'];
 
-        // Count tag relationships
-        $stats['tag_relationships'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}variant_tags");
+        // Count tag relationships (variants with tags)
+        $stats['tag_relationships'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}genetic_variants WHERE tags IS NOT NULL AND tags != ''");
 
         return $stats;
+    }
+
+    /**
+     * IMPORT DATA METHODS
+     */
+
+    /**
+     * Insert import data row
+     */
+    public static function insert_import_data($row_data, $import_batch = null) {
+        global $wpdb;
+        $table = $wpdb->prefix . 'import_data';
+
+        $result = $wpdb->insert(
+            $table,
+            array(
+                'row_data' => is_array($row_data) ? json_encode($row_data) : $row_data,
+                'import_batch' => $import_batch
+            ),
+            array('%s', '%s')
+        );
+
+        return $result !== false ? $wpdb->insert_id : false;
+    }
+
+    /**
+     * Batch insert import data
+     */
+    public static function batch_insert_import_data($rows_data, $import_batch = null) {
+        global $wpdb;
+        $table = $wpdb->prefix . 'import_data';
+
+        if (empty($rows_data)) {
+            return 0;
+        }
+
+        $values = array();
+        $placeholders = array();
+
+        foreach ($rows_data as $row_data) {
+            $json_data = is_array($row_data) ? json_encode($row_data) : $row_data;
+            $values = array_merge($values, array($json_data, $import_batch));
+            $placeholders[] = "(%s, %s)";
+        }
+
+        $query = "INSERT INTO $table
+                  (row_data, import_batch)
+                  VALUES " . implode(', ', $placeholders);
+
+        $result = $wpdb->query($wpdb->prepare($query, $values));
+
+        return $result !== false ? $result : 0;
+    }
+
+    /**
+     * Get import data count
+     */
+    public static function get_import_data_count($import_batch = null) {
+        global $wpdb;
+        $table = $wpdb->prefix . 'import_data';
+
+        if ($import_batch) {
+            return $wpdb->get_var($wpdb->prepare(
+                "SELECT COUNT(*) FROM $table WHERE import_batch = %s",
+                $import_batch
+            ));
+        }
+
+        return $wpdb->get_var("SELECT COUNT(*) FROM $table");
+    }
+
+    /**
+     * Clear import data by batch
+     */
+    public static function clear_import_data_batch($import_batch) {
+        global $wpdb;
+        $table = $wpdb->prefix . 'import_data';
+
+        return $wpdb->delete($table, array('import_batch' => $import_batch), array('%s'));
     }
 
 }

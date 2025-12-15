@@ -1,0 +1,50 @@
+[
+    {
+        "SNP ID": "rs1800629",
+        "SNP Name": "TNF -308 variant",
+        "Risk Allele": "A",
+        "Your Allele": "GG",
+        "Result": "-/-",
+        "Report Name": "MTHFRSupport Variant Report v2.5",
+        "Info": "http://www.snpedia.com/index.php/Rs1800629",
+        "Video": "",
+        "Tags": null,
+        "Group": "HLA"
+    },
+    {
+        "SNP ID": "rs361525",
+        "SNP Name": "TNF -238 variant",
+        "Risk Allele": "A",
+        "Your Allele": "GG",
+        "Result": "-/-",
+        "Report Name": "MTHFRSupport Variant Report v2.5",
+        "Info": "http://www.snpedia.com/index.php/Rs361525",
+        "Video": "",
+        "Tags": null,
+        "Group": "HLA"
+    },
+    {
+        "SNP ID": "rs4792800",
+        "SNP Name": "TNFRSF13B variant",
+        "Risk Allele": "G",
+        "Your Allele": "AA",
+        "Result": "-/-",
+        "Report Name": "MTHFRSupport Variant Report v2.5",
+        "Info": "http://www.snpedia.com/index.php/Rs4792800",
+        "Video": "",
+        "Tags": null,
+        "Group": "HLA"
+    },
+    {
+        "SNP ID": "rs2048683",
+        "SNP Name": "ACE2 variant",
+        "Risk Allele": "G",
+        "Your Allele": "GG",
+        "Result": "+/+",
+        "Report Name": "Covid Report",
+        "Info": "",
+        "Video": "",
+        "Tags": null,
+        "Group": "HLA"
+    }
+]

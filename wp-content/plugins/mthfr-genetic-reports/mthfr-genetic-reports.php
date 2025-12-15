@@ -170,6 +170,10 @@ class MTHFR_Genetic_Reports {
         add_action('wp_ajax_mthfr_test_loading', array($this, 'ajax_test_loading'));
         add_action('wp_ajax_mthfr_import_upload', array($this, 'ajax_import_upload'));
         add_action('wp_ajax_mthfr_import_reimport', array($this, 'ajax_import_reimport'));
+        add_action('wp_ajax_mthfr_chunk_import_start', array($this, 'ajax_chunk_import_start'));
+        add_action('wp_ajax_mthfr_chunk_import_process', array($this, 'ajax_chunk_import_process'));
+        add_action('wp_ajax_mthfr_chunk_import_status', array($this, 'ajax_chunk_import_status'));
+        add_action('wp_ajax_mthfr_chunk_import_cancel', array($this, 'ajax_chunk_import_cancel'));
 
         // WordPress hooks
         add_action('init', array($this, 'late_init'));
@@ -297,6 +301,18 @@ class MTHFR_Genetic_Reports {
             'mthfr-cache-test',
             array($this, 'cache_test_page')
         );
+
+        // Add Async Jobs submenu if the class exists
+        if (class_exists('MTHFR_Async_Report_Generator')) {
+            add_submenu_page(
+                'mthfr-reports',
+                'Async Jobs',
+                'Async Jobs',
+                'manage_options',
+                'mthfr-async-jobs',
+                array('MTHFR_Async_Report_Generator', 'admin_page')
+            );
+        }
 
     }
 
@@ -466,6 +482,39 @@ class MTHFR_Genetic_Reports {
             </div>
 
             <div class="card">
+                <h2>Chunked XLSX Import (Large Files)</h2>
+                <div id="chunk-import-section">
+                    <form id="chunk-import-form" enctype="multipart/form-data">
+                        <?php wp_nonce_field('mthfr_chunk_import_start', 'mthfr_chunk_import_nonce'); ?>
+                        <table class="form-table">
+                            <tr>
+                                <th scope="row">Select Large XLSX File</th>
+                                <td>
+                                    <input type="file" name="xlsx_file" id="xlsx_file" accept=".xlsx,.xls" required>
+                                    <p class="description">Upload large XLSX files (recommended for files with 1000+ rows). Data will be imported in chunks of 400 rows to avoid timeouts.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <button type="button" id="start-chunk-import" class="button button-primary">Start Chunked Import</button>
+                    </form>
+
+                    <div id="import-progress-section" style="display: none; margin-top: 20px;">
+                        <h3>Import Progress</h3>
+                        <div class="progress-bar" style="background: #f1f1f1; border: 1px solid #ccc; height: 20px; margin: 10px 0;">
+                            <div id="progress-fill" style="background: #007cba; height: 100%; width: 0%; transition: width 0.3s;"></div>
+                        </div>
+                        <p id="progress-text">Preparing import...</p>
+                        <button type="button" id="cancel-import" class="button" style="display: none;">Cancel Import</button>
+                    </div>
+
+                    <div id="import-results-section" style="display: none; margin-top: 20px;">
+                        <h3>Import Results</h3>
+                        <div id="import-results-content"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
                 <h2>Database Management</h2>
                 <form method="post" onsubmit="return confirm('Are you sure you want to clear all data? This action cannot be undone.');">
                     <?php wp_nonce_field('mthfr_clear_database', 'mthfr_import_nonce'); ?>
@@ -495,6 +544,9 @@ class MTHFR_Genetic_Reports {
 
         <script>
         jQuery(document).ready(function($) {
+            var importBatchId = null;
+            var importInterval = null;
+
             $('form').on('submit', function(e) {
                 var $form = $(this);
                 var action = $form.find('input[name="action"]').val();
@@ -535,6 +587,118 @@ class MTHFR_Genetic_Reports {
                         }
                     });
                 }
+            });
+
+            // Chunked import functionality
+            $('#start-chunk-import').on('click', function() {
+                var fileInput = $('#xlsx_file')[0];
+                if (!fileInput.files[0]) {
+                    alert('Please select a file first.');
+                    return;
+                }
+
+                var formData = new FormData();
+                formData.append('action', 'mthfr_chunk_import_start');
+                formData.append('mthfr_chunk_import_nonce', $('#mthfr_chunk_import_nonce').val());
+                formData.append('xlsx_file', fileInput.files[0]);
+
+                $('#start-chunk-import').prop('disabled', true).text('Starting...');
+                $('#progress-text').text('Starting import...');
+
+                $.ajax({
+                    url: ajaxurl,
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        if (response.success) {
+                            importBatchId = response.data.batch_id;
+                            $('#import-progress-section').show();
+                            $('#cancel-import').show();
+                            startImportProcess();
+                        } else {
+                            alert('Error starting import: ' + response.data);
+                            $('#start-chunk-import').prop('disabled', false).text('Start Chunked Import');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error: ' + error);
+                        $('#start-chunk-import').prop('disabled', false).text('Start Chunked Import');
+                    }
+                });
+            });
+
+            function startImportProcess() {
+                importInterval = setInterval(function() {
+                    $.ajax({
+                        url: ajaxurl,
+                        type: 'POST',
+                        data: {
+                            action: 'mthfr_chunk_import_process',
+                            batch_id: importBatchId
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                var data = response.data;
+                                var progress = data.progress || 0;
+
+                                $('#progress-fill').css('width', progress + '%');
+                                $('#progress-text').text(
+                                    'Processed: ' + data.total_processed + ' / ' + data.total_rows +
+                                    ' rows (' + progress + '% complete)'
+                                );
+
+                                if (data.completed) {
+                                    clearInterval(importInterval);
+                                    $('#cancel-import').hide();
+                                    $('#import-results-section').show();
+                                    $('#import-results-content').html(
+                                        '<div class="notice notice-success">' +
+                                        '<p><strong>Import completed successfully!</strong></p>' +
+                                        '<p>Total rows imported: ' + data.total_processed + '</p>' +
+                                        '</div>'
+                                    );
+                                    $('#start-chunk-import').prop('disabled', false).text('Start Chunked Import');
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, 3000);
+                                }
+                            } else {
+                                clearInterval(importInterval);
+                                alert('Error processing chunk: ' + response.data);
+                                $('#start-chunk-import').prop('disabled', false).text('Start Chunked Import');
+                                $('#cancel-import').hide();
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            clearInterval(importInterval);
+                            alert('Error: ' + error);
+                            $('#start-chunk-import').prop('disabled', false).text('Start Chunked Import');
+                            $('#cancel-import').hide();
+                        }
+                    });
+                }, 2000); // Check every 2 seconds
+            }
+
+            $('#cancel-import').on('click', function() {
+                if (importInterval) {
+                    clearInterval(importInterval);
+                }
+
+                $.ajax({
+                    url: ajaxurl,
+                    type: 'POST',
+                    data: {
+                        action: 'mthfr_chunk_import_cancel',
+                        batch_id: importBatchId
+                    },
+                    success: function(response) {
+                        $('#cancel-import').hide();
+                        $('#progress-text').text('Import cancelled');
+                        $('#start-chunk-import').prop('disabled', false).text('Start Chunked Import');
+                    }
+                });
             });
         });
         </script>
@@ -685,19 +849,22 @@ class MTHFR_Genetic_Reports {
         $stats['variants'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}genetic_variants");
 
         // Count categories
-        $stats['categories'] = $wpdb->get_var("SELECT COUNT(DISTINCT category_name) FROM {$wpdb->prefix}variant_categories");
+        $stats['categories'] = $wpdb->get_var("SELECT COUNT(DISTINCT categories) FROM {$wpdb->prefix}genetic_variants WHERE categories IS NOT NULL AND categories != ''");
 
         // Count tags
-        $stats['tags'] = $wpdb->get_var("SELECT COUNT(DISTINCT tag_name) FROM {$wpdb->prefix}variant_tags");
+        $stats['tags'] = MTHFR_Database::get_tags_count();
 
         // Count pathways
         $stats['pathways'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}pathways");
 
-        // Count category relationships
-        $stats['category_relationships'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}variant_categories");
+        // Count category relationships (now stored directly in variants table)
+        $stats['category_relationships'] = $stats['categories'];
 
-        // Count tag relationships
-        $stats['tag_relationships'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}variant_tags");
+        // Count tag relationships (variants with tags)
+        $stats['tag_relationships'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}genetic_variants WHERE tags IS NOT NULL AND tags != ''");
+
+        // Count import data
+        $stats['import_data'] = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}import_data");
 
         echo '<table class="wp-list-table widefat fixed striped">';
         echo '<thead><tr><th>Data Type</th><th>Count</th><th>Description</th></tr></thead>';
@@ -708,6 +875,7 @@ class MTHFR_Genetic_Reports {
         echo '<tr><td><strong>Pathways</strong></td><td>' . esc_html($stats['pathways']) . '</td><td>Pathway definitions</td></tr>';
         echo '<tr><td><strong>Variant-Category Links</strong></td><td>' . esc_html($stats['category_relationships']) . '</td><td>RSID to category associations</td></tr>';
         echo '<tr><td><strong>Variant-Tag Links</strong></td><td>' . esc_html($stats['tag_relationships']) . '</td><td>RSID to tag associations</td></tr>';
+        echo '<tr><td><strong>Imported Data Rows</strong></td><td>' . esc_html($stats['import_data']) . '</td><td>General XLSX import data</td></tr>';
         echo '</tbody></table>';
 
         // Check for old plugin directory
@@ -806,10 +974,6 @@ class MTHFR_Genetic_Reports {
 
         // Clear tables in correct order (respecting foreign keys)
         $tables_to_clear = array(
-            'variant_tag_relationships',
-            'variant_tags',
-            'variant_categories',
-            'pathways',
             'genetic_variants'
         );
 
@@ -928,6 +1092,126 @@ class MTHFR_Genetic_Reports {
         $output = ob_get_clean();
 
         wp_send_json_success($output);
+    }
+
+    /**
+     * Start chunked XLSX import
+     */
+    public function ajax_chunk_import_start() {
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Unauthorized');
+        }
+
+        // Verify nonce
+        if (!wp_verify_nonce($_POST['mthfr_chunk_import_nonce'], 'mthfr_chunk_import_start')) {
+            wp_send_json_error('Security check failed');
+        }
+
+        if (empty($_FILES['xlsx_file']['tmp_name'])) {
+            wp_send_json_error('No file uploaded');
+        }
+
+        // Validate file type
+        $file_type = wp_check_filetype($_FILES['xlsx_file']['name']);
+        if (!in_array($file_type['ext'], array('xlsx', 'xls'))) {
+            wp_send_json_error('Invalid file type. Only XLSX and XLS files are allowed.');
+        }
+
+        // Move uploaded file to temp location
+        $upload_dir = wp_upload_dir();
+        $temp_dir = $upload_dir['basedir'] . '/mthfr_temp_imports/';
+
+        if (!file_exists($temp_dir)) {
+            wp_mkdir_p($temp_dir);
+        }
+
+        $temp_file = $temp_dir . 'import_' . time() . '_' . sanitize_file_name($_FILES['xlsx_file']['name']);
+
+        if (!move_uploaded_file($_FILES['xlsx_file']['tmp_name'], $temp_file)) {
+            wp_send_json_error('Failed to save uploaded file');
+        }
+
+        // Start import
+        require_once plugin_dir_path(__FILE__) . 'includes/class-xlsx-chunk-importer.php';
+        $importer = new XLSX_Chunk_Importer();
+        $result = $importer->start_import($temp_file);
+
+        if (!$result['success']) {
+            wp_send_json_error($result['message']);
+        }
+
+        wp_send_json_success($result);
+    }
+
+    /**
+     * Process next chunk
+     */
+    public function ajax_chunk_import_process() {
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Unauthorized');
+        }
+
+        $batch_id = sanitize_text_field($_POST['batch_id'] ?? '');
+
+        if (empty($batch_id)) {
+            wp_send_json_error('Batch ID required');
+        }
+
+        require_once plugin_dir_path(__FILE__) . 'includes/class-xlsx-chunk-importer.php';
+        $importer = new XLSX_Chunk_Importer();
+        $result = $importer->process_chunk($batch_id);
+
+        if (!$result['success']) {
+            wp_send_json_error($result['message']);
+        }
+
+        wp_send_json_success($result);
+    }
+
+    /**
+     * Get import status
+     */
+    public function ajax_chunk_import_status() {
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Unauthorized');
+        }
+
+        $batch_id = sanitize_text_field($_POST['batch_id'] ?? '');
+
+        if (empty($batch_id)) {
+            wp_send_json_error('Batch ID required');
+        }
+
+        require_once plugin_dir_path(__FILE__) . 'includes/class-xlsx-chunk-importer.php';
+        $importer = new XLSX_Chunk_Importer();
+        $result = $importer->get_import_status($batch_id);
+
+        if (!$result['success']) {
+            wp_send_json_error($result['message']);
+        }
+
+        wp_send_json_success($result);
+    }
+
+    /**
+     * Cancel import
+     */
+    public function ajax_chunk_import_cancel() {
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Unauthorized');
+        }
+
+        $batch_id = sanitize_text_field($_POST['batch_id'] ?? '');
+
+        if (empty($batch_id)) {
+            wp_send_json_error('Batch ID required');
+        }
+
+        require_once plugin_dir_path(__FILE__) . 'includes/class-xlsx-chunk-importer.php';
+        $importer = new XLSX_Chunk_Importer();
+        $result = $importer->cancel_import($batch_id);
+
+        wp_send_json_success($result);
     }
 
     public function activate() {

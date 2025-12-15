@@ -69,17 +69,11 @@ class ExcelDatabase {
         error_log('MTHFR: Clearing existing genetic database data for reimport');
 
         try {
-            // Clear in order due to foreign key constraints
-            $wpdb->query("DELETE FROM {$wpdb->prefix}variant_tags");
-            $wpdb->query("DELETE FROM {$wpdb->prefix}variant_categories");
+            // Clear genetic variants
             $wpdb->query("DELETE FROM {$wpdb->prefix}genetic_variants");
-            $wpdb->query("DELETE FROM {$wpdb->prefix}pathways");
 
             // Reset auto-increment counters
             $wpdb->query("ALTER TABLE {$wpdb->prefix}genetic_variants AUTO_INCREMENT = 1");
-            $wpdb->query("ALTER TABLE {$wpdb->prefix}variant_categories AUTO_INCREMENT = 1");
-            $wpdb->query("ALTER TABLE {$wpdb->prefix}variant_tags AUTO_INCREMENT = 1");
-            $wpdb->query("ALTER TABLE {$wpdb->prefix}pathways AUTO_INCREMENT = 1");
 
             error_log('MTHFR: Genetic database data cleared successfully');
             return true;
@@ -186,7 +180,7 @@ class ExcelDatabase {
                     'Gene' => 'MTHFR',
                     'SNP' => 'C677T',
                     'Risk' => 'T',
-                    'rs10306114' => 'Methylation & Methionine/Homocysteine Pathways',
+                    'Category' => 'Methylation & Methionine/Homocysteine Pathways',
                     'Report Name' => 'MTHFRSupport Variant Report v2.5',
                     'Info' => 'MTHFR C677T variant affecting folate metabolism',
                     'Video' => null,
@@ -199,7 +193,7 @@ class ExcelDatabase {
                     'Gene' => 'MTHFR',
                     'SNP' => 'A1298C',
                     'Risk' => 'C',
-                    'rs10306114' => 'Methylation & Methionine/Homocysteine Pathways',
+                    'Category' => 'Methylation & Methionine/Homocysteine Pathways',
                     'Report Name' => 'MTHFRSupport Variant Report v2.5',
                     'Info' => 'MTHFR A1298C variant',
                     'Video' => null,
@@ -241,7 +235,7 @@ class ExcelDatabase {
 
             if ($db_entries) {
                 foreach ($db_entries as $db_info) {
-                    $category = $db_info['rs10306114'] ?? 'Primary SNPs';
+                    $category = $db_info['Category'] ?? 'Primary SNPs';
 
                     if (!isset($matched_data[$category])) {
                         $matched_data[$category] = array();
@@ -273,7 +267,7 @@ class ExcelDatabase {
 
             if ($db_entries) {
                 foreach ($db_entries as $db_info) {
-                    $category = $db_info['rs10306114'] ?? 'Primary SNPs';
+                    $category = $db_info['Category'] ?? 'Primary SNPs';
 
                     // Apply category filtering
                     if ($category_filters && !in_array($category, $category_filters)) {
@@ -285,7 +279,7 @@ class ExcelDatabase {
                     }
 
                     $merged_variant = array_merge($variant, $db_info);
-                    $merged_variant['rs10306114'] = $category;
+                    $merged_variant['Category'] = $category;
 
                     $matched_data[$category][] = $merged_variant;
                 }
@@ -299,14 +293,14 @@ class ExcelDatabase {
      * Get report categories (optimized version)
      */
     public static function get_report_categories($report_type) {
-        // Use database query instead of loading all variants
+        // Use database query to get categories from genetic_variants table
         global $wpdb;
 
         $results = $wpdb->get_col("
-            SELECT DISTINCT c.category_name
-            FROM {$wpdb->prefix}variant_categories c
-            INNER JOIN {$wpdb->prefix}genetic_variants v ON c.variant_id = v.id
-            ORDER BY c.category_name
+            SELECT DISTINCT categories
+            FROM {$wpdb->prefix}genetic_variants
+            WHERE categories IS NOT NULL AND categories != ''
+            ORDER BY categories
         ");
 
         return $results ?: array();
@@ -337,15 +331,16 @@ class ExcelDatabase {
         // Get category distribution (limit to avoid loading too much data)
         global $wpdb;
         $category_counts = $wpdb->get_results("
-            SELECT category_name, COUNT(*) as count
-            FROM {$wpdb->prefix}variant_categories
-            GROUP BY category_name
+            SELECT categories, COUNT(*) as count
+            FROM {$wpdb->prefix}genetic_variants
+            WHERE categories IS NOT NULL AND categories != ''
+            GROUP BY categories
             ORDER BY count DESC
             LIMIT 100
         ", ARRAY_A);
 
         foreach ($category_counts as $row) {
-            $stats['categories'][$row['category_name']] = intval($row['count']);
+            $stats['categories'][$row['categories']] = intval($row['count']);
         }
 
         return $stats;

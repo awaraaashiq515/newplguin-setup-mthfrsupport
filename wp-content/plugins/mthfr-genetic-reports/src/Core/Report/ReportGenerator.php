@@ -521,7 +521,7 @@ class ReportGenerator {
 
               case 'covid':
             return array(
-                'Covid',
+                'Covid'
                 
             );
 
@@ -531,7 +531,90 @@ class ReportGenerator {
                 );
 
             case 'bundled':
-                return array();
+                // Bundled reports combine Variant, Methylation, Excipient, and COVID categories
+                $variant_categories = array(
+                    'Alzheimers/Cardio/Lipid',
+                    'COMT Activity',
+                    'Cannabinoid Pathway',
+                    'Celiac Disease/Gluten Intolerance',
+                    'Clotting Factors',
+                    'Eye Health',
+                    'Glyoxylate Metabolic Process',
+                    'HLA',
+                    'IgA',
+                    'IgE',
+                    'IgG',
+                    'Iron Uptake & Transport',
+                    'Liver Detox - Phase I',
+                    'Liver Detox - Phase II',
+                    'Methylation & Methionine/Homocysteine Pathways',
+                    'Mitochondrial Function',
+                    'Molybdenum',
+                    'Neurotransmitter Pathway: Glutamate & GABA',
+                    'Neurotransmitter Pathway: Serotonin & Dopamine',
+                    'Other Immune Factors',
+                    'Pentose Phosphate Pathway',
+                    'Thiamin/Thiamine Degradation',
+                    'Thyroid',
+                    'Trans-Sulfuration Pathway',
+                    'Yeast/Alcohol Metabolism'
+                );
+
+                $methylation_categories = array(
+                    'Methylation & Methionine/Homocysteine Pathways'
+                );
+
+                $excipient_categories = array(
+                    'Castor Oil',
+                    'Sodium Deoxycholate',
+                    'Mercury',
+                    'Potassium Chloride',
+                    'Beta-Propiolactone',
+                    'Polysorbate 20',
+                    'Gentamicin Sulfate',
+                    'Formaldehyde',
+                    'Acetone',
+                    'Sorbitol',
+                    'Lactose',
+                    'Insect Cell',
+                    'A-Tocopheryl Hydrogen Succinate',
+                    'Amphotericin B',
+                    'Plasdone C',
+                    'Magnesium Stearate',
+                    'Benzethonium Chloride',
+                    'Ovalbumin',
+                    'Polysorbate 80',
+                    'Sucrose',
+                    'Sodium Chloride',
+                    'Dextrose',
+                    'Polymyxin B',
+                    'Urea',
+                    'Gelatin',
+                    'Hydrocortisone',
+                    'FD&C Yellow #6 Aluminum Lake Dye',
+                    'Calcium Chloride',
+                    'Sodium Borate',
+                    'Protamine Sulphate',
+                    'D-Fructose',
+                    'Phenol Red',
+                    'Nonylphenol Ethoxylate',
+                    'Microcrystalline Cellulose',
+                    'Magnesium Sulfate',
+                    'Disodium Phosphate',
+                    'Phosphate-Buffered Saline',
+                    'D-Mannose',
+                    'Sodium Taurodeoxycholate',
+                    'Human Serum Albumin',
+                    'Aluminum Sulfate',
+                    'L-Tyrosine',
+                );
+
+                $covid_categories = array(
+                    'Covid'
+                );
+
+                $all_categories = array_merge($variant_categories, $methylation_categories, $excipient_categories, $covid_categories);
+                return array_unique($all_categories);
 
             case 'variant':
                 return array(

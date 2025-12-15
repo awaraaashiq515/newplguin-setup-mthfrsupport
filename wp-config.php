@@ -96,9 +96,12 @@ define('WP_DEBUG_DISPLAY', true);
 
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 /* That's all, stop editing! Happy publishing. */
-define('WP_MEMORY_LIMIT', '9048M');  // Or 2G
-define('WP_MAX_MEMORY_LIMIT', '9048M'); // For admin-side operations
+// define('WP_MEMORY_LIMIT', '9048M');  // Or 2G
+// define('WP_MAX_MEMORY_LIMIT', '9048M'); // For admin-side operations
 /** Absolute path to the WordPress directory. */
+define('WP_MEMORY_LIMIT', '1024M');
+define('WP_MAX_MEMORY_LIMIT', '1024M');
+
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }

@@ -280,14 +280,14 @@ class MTHFR_Database_Importer {
                 'info' => $info ?: null,
                 'video' => $video ?: null,
                 'report_name' => $report_name ?: null,
-                'tags' => $tags ?: null
+                'tags' => $tags ?: null,
+                'categories' => $pathway ?: null
             );
 
             $variant_batch[] = $variant_data;
 
-            // Prepare category data
+            // Track pathways for global insertion (if needed elsewhere)
             if (!empty($pathway)) {
-                $category_batch[$rsid] = $pathway;
                 $pathways_to_insert[] = $pathway;
             }
 
@@ -307,35 +307,13 @@ class MTHFR_Database_Importer {
                 $variants_inserted = count($variant_ids);
                 error_log('MTHFR: Batch inserted ' . $variants_inserted . ' variants');
 
-                // Process categories and tags for inserted variants
+                // Process tags for inserted variants (categories are now stored in variants table)
                 if (!empty($variant_ids)) {
                     // Create mapping of RSID to variant ID
                     $rsid_to_id_map = array();
                     foreach ($variant_batch as $index => $variant) {
                         if (isset($variant_ids[$index])) {
                             $rsid_to_id_map[$variant['rsid']] = $variant_ids[$index];
-                        }
-                    }
-
-                    // Batch insert categories
-                    if (!empty($category_batch)) {
-                        $category_data = array();
-                        foreach ($category_batch as $rsid => $pathway) {
-                            if (isset($rsid_to_id_map[$rsid])) {
-                                $category_data[] = array(
-                                    'variant_id' => $rsid_to_id_map[$rsid],
-                                    'category_name' => $pathway
-                                );
-                            }
-                        }
-
-                        if (!empty($category_data)) {
-                            try {
-                                $categories_inserted = MTHFR_Database::batch_insert_variant_categories($category_data);
-                                error_log('MTHFR: Batch inserted ' . $categories_inserted . ' categories');
-                            } catch (Exception $e) {
-                                error_log('MTHFR: Error inserting categories: ' . $e->getMessage());
-                            }
                         }
                     }
 
@@ -376,11 +354,11 @@ class MTHFR_Database_Importer {
             MTHFR_Database::insert_pathway($pathway);
         }
 
-        error_log('MTHFR: Batch processing completed - variants: ' . $variants_inserted . ', categories: ' . $categories_inserted);
+        error_log('MTHFR: Batch processing completed - variants: ' . $variants_inserted . ' (categories stored in variants table)');
 
         return array(
             'variants_inserted' => $variants_inserted,
-            'categories_inserted' => $categories_inserted
+            'categories_inserted' => $variants_inserted // Categories are now stored in variants table
         );
     }
 
@@ -426,7 +404,8 @@ class MTHFR_Database_Importer {
             'info' => $info ?: null,
             'video' => $video ?: null,
             'report_name' => $report_name ?: null,
-            'tags' => $tags ?: null
+            'tags' => $tags ?: null,
+            'categories' => $pathway ?: null
         );
 
         // Insert variant
@@ -437,14 +416,8 @@ class MTHFR_Database_Importer {
             return array('success' => false, 'categories_count' => 0);
         }
 
-        // Insert category
-        $categories_count = 0;
-        if (!empty($pathway)) {
-            $category_result = MTHFR_Database::insert_variant_category($variant_id, $pathway);
-            if ($category_result) {
-                $categories_count++;
-            }
-        }
+        // Categories are now stored in the variants table
+        $categories_count = !empty($pathway) ? 1 : 0;
 
         // Insert tags
         if (!empty($tags)) {
